@@ -6,6 +6,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import kadim from "../assets/kadim-tekin.jpg";
+import efe from "../assets/efe.jpg";
+import seckin from "../assets/seckin-turk.jpeg";
+import kuntay from "../assets/kuntay.jpg";
+import cem from "../assets/cem-tore.jpg";
+import cemil from "../assets/cemil-cosan.jpg";
+import ozkan from "../assets/ozkan-unver.jpg";
 import { useTranslation } from "react-i18next";
 
 interface TestimonialProps {
@@ -19,44 +26,44 @@ export const Testimonials = () => {
   const { t } = useTranslation();
   const testimonials: TestimonialProps[] = [
     {
-      image: "/src/assets/kadim-tekin.jpg",
+      image: kadim,
       name: "Kadim Tekin",
       userName: "Vocalist, Songwriter",
       comment: t("testimonials1"),
     },
     {
-      image: "/src/assets/efe.jpg",
+      image: efe,
       name: "Effie",
       userName: "Vocalist",
       comment: t("testimonials2"),
     },
 
     {
-      image: "/src/assets/seckin-turk.jpeg",
+      image: seckin,
       name: "Seçkin Türk",
       userName: t("guitarist") + ", " + t("songwriter"),
       comment: t("testimonials3"),
     },
     {
-      image: "/src/assets/kuntay.jpg",
+      image: kuntay,
       name: "Kuntay",
       userName: t("producer") + ", " + t("dj"),
       comment: t("testimonials4"),
     },
     {
-      image: "/src/assets/cem-tore.jpg",
+      image: cem,
       name: "Cem Töre",
       userName: t("videographer") + ", " + t("director"),
       comment: t("testimonials5"),
     },
     {
-      image: "/src/assets/cemil-cosan.jpg",
+      image: cemil,
       name: "Cemil Coşan",
       userName: t("mixing") + ", " + t("dj"),
       comment: t("testimonials6"),
     },
     {
-      image: "/src/assets/ozkan-unver.jpg",
+      image: ozkan,
       name: "Özkan Ünver",
       userName: t("dj"),
       comment: t("testimonials7"),

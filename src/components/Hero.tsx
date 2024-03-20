@@ -1,6 +1,7 @@
 import { buttonVariants } from "./ui/button";
 import { FaGooglePlay, FaApple } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import login from "../assets/login.png";
 export const Hero = () => {
   const { t, i18n } = useTranslation();
   return (
@@ -73,10 +74,7 @@ export const Hero = () => {
 
       {/* Hero cards sections */}
       <div className="z-10">
-        <img
-          src="/src/assets/login.png"
-          style={{ width: 250, height: "auto" }}
-        />
+        <img src={login} style={{ width: 250, height: "auto" }} />
       </div>
 
       {/* Shadow effect */}

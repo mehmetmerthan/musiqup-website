@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-
+import icon from "../assets/icon.png";
 export const Footer = () => {
   const { t } = useTranslation();
   return (
@@ -9,7 +9,7 @@ export const Footer = () => {
       <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div className="col-span-full xl:col-span-2">
           <a href="/" className="font-bold text-xl flex">
-            <img src="/src/assets/icon.png" className="w-8 h-8 mr-2" />
+            <img src={icon} className="w-8 h-8 mr-2" />
             musiqup
           </a>
         </div>

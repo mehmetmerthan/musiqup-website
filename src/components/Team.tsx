@@ -10,6 +10,10 @@ import {
 import { Instagram, Linkedin, Github, Twitter } from "lucide-react";
 import { FaArtstation, FaSpotify } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import mmh from "../assets/MMH.png";
+import irem from "../assets/irem.png";
+import latife from "../assets/latife.png";
+import erkam from "../assets/erkam.png";
 interface TeamProps {
   imageUrl: string;
   name: string;
@@ -46,7 +50,7 @@ export const Team = () => {
   };
   const teamList: TeamProps[] = [
     {
-      imageUrl: "/src/assets/MMH.png",
+      imageUrl: mmh,
       name: "Mehmet Mert HAN",
       description: t("user1"),
       position: t("coFounder") + ", " + t("developer"),
@@ -59,7 +63,7 @@ export const Team = () => {
       ],
     },
     {
-      imageUrl: "/src/assets/irem.png",
+      imageUrl: irem,
       name: "İrem ",
       position: t("coFounder") + ", " + t("artist"),
       description: t("user2"),
@@ -75,7 +79,7 @@ export const Team = () => {
       ],
     },
     {
-      imageUrl: "/src/assets/latife.png",
+      imageUrl: latife,
       name: "Latife Bilgili",
       position: t("visualArtist"),
       description: t("user3"),
@@ -91,7 +95,7 @@ export const Team = () => {
       ],
     },
     {
-      imageUrl: "/src/assets/erkam.png",
+      imageUrl: erkam,
       name: "Erkam Yasir Kaya",
       position: t("financialExpert"),
       description: t("user4"),

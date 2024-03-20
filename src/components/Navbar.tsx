@@ -14,6 +14,10 @@ import {
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import icon from "../assets/icon.png";
+import tur64 from "../assets/tur64.png";
+import uk64 from "../assets/uk64.png";
+
 interface RouteProps {
   href: string;
   label: string;
@@ -30,7 +34,7 @@ export const Navbar = () => {
     { href: "#about", label: t("about") },
     {
       href: "#features",
-      label: t('features'),
+      label: t("features"),
     },
     {
       href: "#testimonials",
@@ -51,7 +55,7 @@ export const Navbar = () => {
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
             <a href="/" className="ml-2 font-bold text-xl flex">
-              <img src="/src/assets/icon.png" className="w-8 h-8 mr-2" />
+              <img src={icon} className="w-8 h-8 mr-2" />
               musiqup
             </a>
           </NavigationMenuItem>
@@ -91,18 +95,12 @@ export const Navbar = () => {
                   >
                     {lang === "en" ? (
                       <>
-                        <img
-                          src="/src/assets/tur64.png"
-                          className="mr-2 w-5 h-5"
-                        />
+                        <img src={tur64} className="mr-2 w-5 h-5" />
                         tr
                       </>
                     ) : (
                       <>
-                        <img
-                          src="/src/assets/uk64.png"
-                          className="mr-2 w-5 h-5"
-                        />
+                        <img src={uk64} className="mr-2 w-5 h-5" />
                         en
                       </>
                     )}
@@ -133,12 +131,12 @@ export const Navbar = () => {
             >
               {lang === "en" ? (
                 <>
-                  <img src="/src/assets/tur64.png" className="mr-2 w-5 h-5" />
+                  <img src={tur64} className="mr-2 w-5 h-5" />
                   tr
                 </>
               ) : (
                 <>
-                  <img src="/src/assets/uk64.png" className="mr-2 w-5 h-5" />
+                  <img src={uk64} className="mr-2 w-5 h-5" />
                   en
                 </>
               )}
