@@ -7,13 +7,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Instagram, Linkedin, Github } from "lucide-react";
+import { Instagram, Linkedin, Github, Twitter } from "lucide-react";
 import { FaArtstation, FaSpotify } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 interface TeamProps {
   imageUrl: string;
   name: string;
   position: string;
   socialNetworks: SociaNetworkslProps[];
+  description: string;
 }
 
 interface SociaNetworkslProps {
@@ -21,67 +23,8 @@ interface SociaNetworkslProps {
   url: string;
 }
 
-const teamList: TeamProps[] = [
-  {
-    imageUrl: "/src/assets/MMH.png",
-    name: "Mehmet Mert HAN",
-    position: "Co-founder",
-    socialNetworks: [
-      { name: "Linkedin", url: "" },
-      {
-        name: "Github",
-        url: "",
-      },
-    ],
-  },
-  {
-    imageUrl: "/src/assets/irem.jpg",
-    name: "İrem ",
-    position: "Co-founder",
-    socialNetworks: [
-      { name: "Linkedin", url: "" },
-      {
-        name: "Instagram",
-        url: "",
-      },
-      {
-        name: "Spotify",
-        url: "",
-      },
-    ],
-  },
-  {
-    imageUrl: "https://i.pravatar.cc/150?img=36",
-    name: "Latife Bilgili",
-    position: "Visual Designer",
-    socialNetworks: [
-      { name: "Linkedin", url: "" },
-
-      {
-        name: "Instagram",
-        url: "",
-      },
-      {
-        name: "Artstation",
-        url: "",
-      },
-    ],
-  },
-  {
-    imageUrl: "https://i.pravatar.cc/150?img=17",
-    name: "Bruce Rogers",
-    position: "Backend Developer",
-    socialNetworks: [
-      { name: "Linkedin", url: "http://linkedin.com" },
-      {
-        name: "Facebook",
-        url: "https://www.facebook.com/",
-      },
-    ],
-  },
-];
-
 export const Team = () => {
+  const { t } = useTranslation();
   const socialIcon = (iconName: string) => {
     switch (iconName) {
       case "Linkedin":
@@ -97,26 +40,95 @@ export const Team = () => {
         return <FaArtstation size="20" />;
       case "Spotify":
         return <FaSpotify size="20" />;
+      case "Twitter":
+        return <Twitter size="20" />;
     }
   };
-
+  const teamList: TeamProps[] = [
+    {
+      imageUrl: "/src/assets/MMH.png",
+      name: "Mehmet Mert HAN",
+      description: t("user1"),
+      position: t("coFounder") + ", " + t("developer"),
+      socialNetworks: [
+        { name: "Linkedin", url: "https://www.linkedin.com/in/mehmetmerthan/" },
+        {
+          name: "Github",
+          url: "https://github.com/mehmetmerthan",
+        },
+      ],
+    },
+    {
+      imageUrl: "/src/assets/irem.png",
+      name: "İrem ",
+      position: t("coFounder") + ", " + t("artist"),
+      description: t("user2"),
+      socialNetworks: [
+        {
+          name: "Instagram",
+          url: "https://www.instagram.com/thehiraa/?hl=tr",
+        },
+        {
+          name: "Spotify",
+          url: "https://open.spotify.com/artist/3ZBYm7UkzvaCyZlZajV6MU",
+        },
+      ],
+    },
+    {
+      imageUrl: "/src/assets/latife.png",
+      name: "Latife Bilgili",
+      position: t("visualArtist"),
+      description: t("user3"),
+      socialNetworks: [
+        {
+          name: "Linkedin",
+          url: "https://www.linkedin.com/in/latife-bilgili-885349213/",
+        },
+        {
+          name: "Artstation",
+          url: "https://www.artstation.com/latifebilgili6",
+        },
+      ],
+    },
+    {
+      imageUrl: "/src/assets/erkam.png",
+      name: "Erkam Yasir Kaya",
+      position: t("financialExpert"),
+      description: t("user4"),
+      socialNetworks: [
+        {
+          name: "Linkedin",
+          url: "https://www.linkedin.com/in/erkamyasirkaya/",
+        },
+        {
+          name: "Twitter",
+          url: "https://twitter.com/ErkamYasirKaya",
+        },
+      ],
+    },
+  ];
   return (
     <section id="team" className="container py-24 sm:py-32">
       <h2 className="text-3xl md:text-4xl font-bold">
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          Our Dedicated{" "}
+          {t("teamTitle1")}{" "}
         </span>
-        Crew
+        {t("teamTitle2")}
       </h2>
 
       <p className="mt-4 mb-10 text-xl text-muted-foreground">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-        dolor pariatur sit!
+        {t("teamDesc")}
       </p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-10">
         {teamList.map(
-          ({ imageUrl, name, position, socialNetworks }: TeamProps) => (
+          ({
+            imageUrl,
+            name,
+            position,
+            socialNetworks,
+            description,
+          }: TeamProps) => (
             <Card
               key={name}
               className="bg-muted/50 relative mt-8 flex flex-col justify-center items-center"
@@ -134,7 +146,7 @@ export const Team = () => {
               </CardHeader>
 
               <CardContent className="text-center pb-2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>{description}</p>
               </CardContent>
 
               <CardFooter>

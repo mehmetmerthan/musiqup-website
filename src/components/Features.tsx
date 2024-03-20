@@ -12,69 +12,66 @@ import spoti from "../assets/spoti.png";
 import profile from "../assets/profiles.png";
 import profile2 from "../assets/profiles2.png";
 import event from "../assets/event.png";
+import { useTranslation } from "react-i18next";
 interface FeatureProps {
   title: string;
   description: string;
   image: string;
 }
 
-const features: FeatureProps[] = [
-  {
-    title: "Create",
-    description:
-      "Create your own musical identity and broadcast it to the whole world.",
-    image: createp,
-  },
-  {
-    title: "Opportunity",
-    description: "The easiest and free way to get noticed by big companies.",
-    image: apply,
-  },
-  {
-    title: "Connect",
-    description:
-      "Find the person you need, musician, director, graphic designer, etc. right away.",
-    image: profile,
-  },
-  {
-    title: "Find",
-    description: "Find the right talent you're looking for.",
-    image: profile2,
-  },
-  {
-    title: "Socialize",
-    description:
-      "Socialize with people like you at app-specific events and concerts.",
-    image: event,
-  },
-  {
-    title: "Spotify",
-    description:
-      "You can see and preview the artist's songs on spotify and add the songs you made.",
-    image: spoti,
-  },
-];
-
-const featureList: string[] = [
-  "Companies",
-  "Venues",
-  "Artists",
-  "Events",
-  "Dtages",
-  "Bands",
-  "Editors",
-  "Musicians",
-  "Visual Artists",
-  "And More",
-];
-
 export const Features = () => {
+  const { t } = useTranslation();
+  const features: FeatureProps[] = [
+    {
+      title: t("create"),
+      description: t("createDesc"),
+      image: createp,
+    },
+    {
+      title: t("opportunity"),
+      description: t("opportunityDesc"),
+      image: apply,
+    },
+    {
+      title: t("connect"),
+      description: t("connectDesc"),
+      image: profile,
+    },
+    {
+      title: t("find"),
+      description: t("findDesc"),
+      image: profile2,
+    },
+    {
+      title: t("socialize"),
+      description: t("socializeDesc"),
+      image: event,
+    },
+    {
+      title: t("spotify"),
+      description: t("spotifyDesc"),
+      image: spoti,
+    },
+  ];
+
+  const featureList: string[] = [
+    t("companies"),
+    t("venues"),
+    t("artists"),
+    t("events"),
+    t("stages"),
+    t("bands"),
+    t("editors"),
+    t("musicians"),
+    t("visualArtists"),
+    t("andMore"),
+  ];
   return (
     <section id="features" className="container py-24 sm:py-32 space-y-8">
       <h2 className="text-3xl lg:text-4xl font-bold md:text-center">
-        Many{" "}
+        {t("featuresTitle1")}{" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          Great Features
+          {t("featuresTitle2")}
         </span>
       </h2>
 

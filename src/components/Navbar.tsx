@@ -13,38 +13,38 @@ import {
 } from "@/components/ui/sheet";
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
-
+import { useTranslation } from "react-i18next";
 interface RouteProps {
   href: string;
   label: string;
 }
-
-const routeList: RouteProps[] = [
-  { href: "#about", label: "About" },
-  {
-    href: "#features",
-    label: "Features",
-  },
-  {
-    href: "#testimonials",
-    label: "Testimonials",
-  },
-  {
-    href: "#team",
-    label: "Team",
-  },
-  {
-    href: "#contactUs",
-    label: "Contact Us",
-  },
-];
-
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [lang, setLang] = useState<string>("en");
-  const toggleState = () => {
+  const { i18n, t } = useTranslation();
+  const toggleState = async () => {
     setLang(lang === "en" ? "tr" : "en");
+    await i18n.changeLanguage(lang === "en" ? "tr" : "en");
   };
+  const routeList: RouteProps[] = [
+    { href: "#about", label: t("about") },
+    {
+      href: "#features",
+      label: t('features'),
+    },
+    {
+      href: "#testimonials",
+      label: t("testimonials"),
+    },
+    {
+      href: "#team",
+      label: t("team"),
+    },
+    {
+      href: "#contactUs",
+      label: t("contact"),
+    },
+  ];
   return (
     <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
       <NavigationMenu className="mx-auto">
@@ -70,9 +70,7 @@ export const Navbar = () => {
 
               <SheetContent side={"left"}>
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">
-                    Shadcn/React
-                  </SheetTitle>
+                  <SheetTitle className="font-bold text-xl">musiqup</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (
@@ -97,7 +95,7 @@ export const Navbar = () => {
                           src="/src/assets/tur64.png"
                           className="mr-2 w-5 h-5"
                         />
-                        Tur
+                        tr
                       </>
                     ) : (
                       <>
@@ -105,7 +103,7 @@ export const Navbar = () => {
                           src="/src/assets/uk64.png"
                           className="mr-2 w-5 h-5"
                         />
-                        Eng
+                        en
                       </>
                     )}
                   </button>
@@ -136,12 +134,12 @@ export const Navbar = () => {
               {lang === "en" ? (
                 <>
                   <img src="/src/assets/tur64.png" className="mr-2 w-5 h-5" />
-                  Tur
+                  tr
                 </>
               ) : (
                 <>
                   <img src="/src/assets/uk64.png" className="mr-2 w-5 h-5" />
-                  Eng
+                  en
                 </>
               )}
             </button>

@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 interface TestimonialProps {
   image: string;
@@ -14,65 +15,66 @@ interface TestimonialProps {
   comment: string;
 }
 
-const testimonials: TestimonialProps[] = [
-  {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe",
-    comment: "This landing page is awesome!",
-  },
-  {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe1",
-    comment:
-      "Lorem ipsum dolor sit amet,empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
-  },
-
-  {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe2",
-    comment:
-      "Lorem ipsum dolor sit amet,exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-  },
-  {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe3",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  },
-  {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe4",
-    comment:
-      "Lorem ipsum dolor sit amet, tempor incididunt  aliqua. Ut enim ad minim veniam, quis nostrud.",
-  },
-  {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe5",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-];
-
 export const Testimonials = () => {
+  const { t } = useTranslation();
+  const testimonials: TestimonialProps[] = [
+    {
+      image: "/src/assets/kadim-tekin.jpg",
+      name: "Kadim Tekin",
+      userName: "Vocalist, Songwriter",
+      comment: t("testimonials1"),
+    },
+    {
+      image: "/src/assets/efe.jpg",
+      name: "Effie",
+      userName: "Vocalist",
+      comment: t("testimonials2"),
+    },
+
+    {
+      image: "/src/assets/seckin-turk.jpeg",
+      name: "Seçkin Türk",
+      userName: t("guitarist") + ", " + t("songwriter"),
+      comment: t("testimonials3"),
+    },
+    {
+      image: "/src/assets/kuntay.jpg",
+      name: "Kuntay",
+      userName: t("producer") + ", " + t("dj"),
+      comment: t("testimonials4"),
+    },
+    {
+      image: "/src/assets/cem-tore.jpg",
+      name: "Cem Töre",
+      userName: t("videographer") + ", " + t("director"),
+      comment: t("testimonials5"),
+    },
+    {
+      image: "/src/assets/cemil-cosan.jpg",
+      name: "Cemil Coşan",
+      userName: t("mixing") + ", " + t("dj"),
+      comment: t("testimonials6"),
+    },
+    {
+      image: "/src/assets/ozkan-unver.jpg",
+      name: "Özkan Ünver",
+      userName: t("dj"),
+      comment: t("testimonials7"),
+    },
+  ];
   return (
     <section id="testimonials" className="container py-24 sm:py-32">
       <h2 className="text-3xl md:text-4xl font-bold">
-        Discover Why
+        {t("testimonialsTitle1")}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           {" "}
-          People Love{" "}
+          {t("testimonialsTitle2")}{" "}
         </span>
-        This app
+        {t("testimonialsTitle3")}
       </h2>
 
       <p className="text-xl text-muted-foreground pt-4 pb-8">
-        We have a quality and strong community
+        {t("testimonialsDesc")}
       </p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:block columns-2  lg:columns-3 lg:gap-6 mx-auto space-y-4 lg:space-y-6">
