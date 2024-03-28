@@ -56,7 +56,7 @@ export const Navbar = () => {
           <NavigationMenuItem className="font-bold flex">
             <a href="/" className="ml-2 font-bold text-xl flex">
               <img src={icon} className="w-8 h-8 mr-2" />
-              musiqup
+              Musiqup
             </a>
           </NavigationMenuItem>
 
@@ -74,7 +74,7 @@ export const Navbar = () => {
 
               <SheetContent side={"left"}>
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">musiqup</SheetTitle>
+                  <SheetTitle className="font-bold text-xl">Musiqup</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (

@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className="col-span-full xl:col-span-2">
           <a href="/" className="font-bold text-xl flex">
             <img src={icon} className="w-8 h-8 mr-2" />
-            musiqup
+            Musiqup
           </a>
         </div>
 

@@ -81,7 +81,7 @@ export const Team = () => {
     {
       imageUrl: latife,
       name: "Latife Bilgili",
-      position: t("visualArtist"),
+      position: t("coFounder") + ", " + t("visualArtist"),
       description: t("user3"),
       socialNetworks: [
         {
@@ -97,7 +97,7 @@ export const Team = () => {
     {
       imageUrl: erkam,
       name: "Erkam Yasir Kaya",
-      position: t("financialExpert"),
+      position: t("coFounder") + ", " + t("financialExpert"),
       description: t("user4"),
       socialNetworks: [
         {
